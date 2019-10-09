@@ -1,0 +1,234 @@
+* {
+  margin: 0px;
+}
+
+body {
+  margin: 0%;
+  background-image: url(images/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.smal1, .smal2, .smal3, .smal4, nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-bottom: 10px;
+  color: white;
+  background: red;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 14px;
+}
+.smal1 h2, .smal2 h2, .smal3 h2, .smal4 h2, nav h2 {
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.smal1 span, .smal2 span, .smal3 span, .smal4 span, nav span {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.teil1:hover {
+  transform: scale(1.1);
+}
+
+.teil2:hover, .teil3:hover, .teil4:hover {
+  transform: scale(1.1);
+}
+
+.smal2, .teil2 #nav2 {
+  background: blue;
+}
+
+.smal3, .teil3 #nav3 {
+  background: green;
+}
+
+.smal4, .teil4 #nav4 {
+  background: #fc8907;
+}
+
+#nav1, #nav2, #nav3, #nav4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background: red;
+  margin: auto;
+  text-transform: capitalize;
+  color: white;
+}
+
+#nav1 button, #nav2 button, #nav3 button, #nav4 button {
+  background: red;
+}
+
+#nav2 button {
+  background: blue;
+}
+
+#nav3 button {
+  background: green;
+}
+
+#nav4 button {
+  background: #fc8907;
+}
+
+.teil1, .teil2, .teil3, .teil4 {
+  background: blanchedalmond;
+  border-radius: 14px;
+}
+
+.smalx1, .smalx2, .smalx3, .smalx4 {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  padding-top: 15%;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.smalx1 p, .smalx2 p, .smalx3 p, .smalx4 p {
+  font-family: "Raleway", sans-serif;
+  padding-bottom: 10px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.smalx1 span, .smalx2 span, .smalx3 span, .smalx4 span {
+  color: gray;
+}
+
+button, #nav4 button {
+  color: white;
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  width: 100px;
+  height: 30px;
+}
+
+footer {
+  text-transform: capitalize;
+  color: white;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin-top: 40px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    padding-top: 25px;
+    font-size: 24px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  p {
+    font-family: "Raleway", sans-serif;
+    padding-bottom: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-left: 25px;
+  }
+
+  button, #nav4 button {
+    color: white;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    width: 170px;
+    height: 40px;
+  }
+
+  footer {
+    font-size: 20px;
+    margin-top: 50px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .smalx1, .smalx2, .smalx3, .smalx4 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .smalx1 p, .smalx2 p, .smalx3 p, .smalx4 p {
+    font-size: 14px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin-top: 40px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    padding-top: 25px;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+
+  p {
+    font-family: "Raleway", sans-serif;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+  }
+
+  button, #nav4 button {
+    color: white;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    width: 150px;
+    height: 30px;
+  }
+
+  footer {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+.drop-out {
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/*# sourceMappingURL=fitnes.css.map */

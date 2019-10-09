@@ -1,0 +1,292 @@
+*{
+    margin: 0px;
+}
+
+body{
+    margin: 0%;
+    background-image: url(images/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;        
+}
+
+.container {
+
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto auto ;
+    grid-gap: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+  
+}
+
+h1{
+      color:white;
+      text-align: center;
+      margin-top: 40px;
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+}
+  
+.smal1{
+     display: flex;
+     flex-direction: column;
+     margin-top: 0;
+     padding-bottom: 10px;
+      color:white;
+      background: red;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 14px;
+
+ & h2{
+        text-transform:uppercase;
+         padding-top: 15px;
+        padding-bottom: 10px;
+        font-size: 16px;
+        
+    }
+ & span{
+        font-weight: bold;
+            
+        font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+    }
+}
+  .teil1:hover{
+      transform:scale(1.1);
+  }
+  .teil2:hover,.teil3:hover,.teil4:hover{
+     transform: scale(1.1);
+  }    
+      
+      
+    
+
+
+.smal2,.smal3,.smal4,nav{
+      @extend .smal1;
+}
+.smal2,.teil2 #nav2{
+      background: blue;
+     
+      
+}
+  .smal3,.teil3 #nav3{
+      background: green;
+}
+
+.smal4,.teil4 #nav4{
+      background: rgb(252, 137, 7);
+}
+  
+#nav1{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background: red; 
+    margin: auto;
+    text-transform: capitalize;
+    color: white;
+}
+
+#nav1 button{
+      background: red;
+      
+}
+
+#nav2 button{
+    background: blue;
+   
+}
+
+#nav3 button{
+    background: green;
+   
+}
+
+#nav4 button{
+    @extend button;
+    background: rgb(252, 137, 7);
+    
+}
+
+#nav2,#nav3,#nav4{
+      @extend #nav1;
+      
+}
+  
+.teil1,.teil2,.teil3,.teil4{
+      background: blanchedalmond;
+      border-radius: 14px;
+
+}
+  
+.smalx1{
+      display: flex;
+      flex-direction: column;
+      height: 250px;
+
+      padding-top: 15%;
+     text-align: left;
+     padding-left: 10px;
+     padding-right: 10px;
+      & p{
+        font-family: 'Raleway', sans-serif;
+        padding-bottom: 10px;
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+       & span{
+          color: gray;
+    }
+      
+}
+  .smalx2,.smalx3,.smalx4{
+      @extend .smalx1;
+  
+  }
+
+
+
+button{
+    color:white;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    width: 100px;
+    height: 30px;
+}
+
+footer{
+    text-transform: capitalize;
+    color:white;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+ 
+
+
+@media only screen and (min-width: 900px) /** desktop*/
+{
+    
+
+.container {
+
+    
+    display: grid;
+  
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto ;
+    
+    grid-gap: 10px;
+    margin-top: 40px;
+  
+}
+h1{
+    font-size: 35px;
+}
+
+h2{
+    padding-top: 25px;
+    font-size: 24px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+
+p{
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-left: 25px;
+    
+   
+}
+
+button{
+    color:white;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    width: 170px;
+    height: 40px;
+}
+
+footer{
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+}
+
+@media only screen and (min-width: 768px)/** tablet :I pad*/
+{
+  
+.smalx1,.smalx2,.smalx3,.smalx4{
+    padding-left: 15px;
+    padding-right: 15px;
+    & p{
+        font-size: 14px;
+
+    }
+    
+}
+.container {
+
+    
+    display: grid;
+  
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto ;
+    
+    grid-gap: 10px;
+    margin-top: 40px;
+  
+}
+h1{
+    font-size: 28px;
+}
+
+h2{
+    padding-top: 25px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 20px;
+    
+    text-transform: capitalize;
+   
+  }
+
+button{
+    color:white;
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    width: 150px;
+    height: 30px;
+}
+
+footer{
+    font-size: 18px;
+    margin-top: 40px;
+}
+}
+
+ .drop-out{
+     transition:1s;
+     opacity: 0;
+     transform: translateY(100%);
+     
+      
+ } 
+
+  

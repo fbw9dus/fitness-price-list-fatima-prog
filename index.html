@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fitnes.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="fitnes.css">
+    <title>fitnessPriceList</title>
+
+</head>
+
+<body>
+    <h1>fitness pricing tables</h1>
+    <div class="container">
+        <div class="teil1">
+            <div class="smal1">
+                <h2>standard</h2>
+                <p>$<span>15</span>/month</p>
+            </div>
+
+            <div class="smalx1">
+                <p><span style="color: red">&#10003;</span> training <span> overview</span></p>
+                <p><span style="color: red">&#x2715;</span> beginner <span> classes</span></p>
+                <p><span style="color: red">&#x2715;</span> personal <span> training </span></p>
+                <p><span style="color: red">&#x2715;</span> olympic <span> weightlifting</span></p>
+                <p><span style="color: red">&#x2715;</span> fondation <span> trining</span></p>
+                <div id="nav1">
+                    <button>buy now</button> 
+                </div>
+
+            </div>
+        </div>
+
+        <div class="teil2">
+            <div class="smal2">
+                <h2>popular</h2>
+                <p>$<span>20</span>/month</p>
+            </div>
+
+            <div class="smalx2">
+                <p><span style="color: blue">&#10003;</span> training <span> overview</span></p>
+                <p><span style="color: blue">&#10003;</span> beginner <span> classes</span></p>
+                <p><span style="color: blue">&#x2715;</span> personal <span> training </span></p>
+                <p><span style="color: blue">&#x2715;</span> olympic <span> weightlifting</span></p>
+                <p> <span style="color: blue">&#x2715;</span> fondation <span> trining</span></p>
+                <div id="nav2">
+                    <button>buy now</button> 
+                </div>
+            </div>
+        </div>
+
+
+        <div class="teil3">
+            <div class="smal3">
+                <h2>golden</h2>
+                <p>$<span>35</span>/month</p>
+            </div>
+            <div class="smalx3">
+                <p><span style="color: green"> &#10003;</span> training<span> overview</span></p>
+                <p><span style="color: green"> &#10003;</span> beginner <span> classes</span></p>
+                <p><span style="color: green"> &#10003;</span> personal <span> training </span></p>
+                <p><span style="color: green"> &#x2715;</span> olympic <span> weightlifting</span></p>
+                <p><span style="color: green"> &#x2715;</span> fondation <span> trining</span></p>
+                <div id="nav3">
+                    <button>buy now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="teil4">
+            <div class="smal4">
+                <h2>professional</h2>
+                <p>$<span>50</span>/month</p>
+            </div>
+            <div class="smalx4">
+                <p><span style="color: rgb(252, 137, 7)"> &#10003;</span> training <span>overview</span></p>
+                <p><span style="color: rgb(252, 137, 7)"> &#10003;</span> beginner <span>classes</span></p>
+                <p><span style="color: rgb(252, 137, 7)"> &#10003;</span> personal <span>training </span></p>
+                <p><span style="color: rgb(252, 137, 7)"> &#10003;</span> olympic <span>weightlifting</span></p>
+                <p><span style="color: rgb(252, 137, 7)"> &#10003;</span> fondation <span> trining</span></p>
+                <div id="nav4">
+                    <button>buy now</button> 
+                </div>
+            </div>
+        </div>
+
+    </div>  
+
+    <footer> © fitness pricing tables.all rights reserved</footer>
+
+
+
+    <script>
+
+        /* Selektoren für die Elemente im HTML */
+
+        var priceContainerSelector = ".teil1,.teil2,.teil3,.teil4"
+
+        var buyButtonSelector = "button"
+
+
+        /* Klassenname, in dem die Animation definiert wurde */
+
+        var animationClass = "drop-out"
+
+
+        /* Zeitabstand zwischen Animation der Container (Millisekunden) */
+
+        var animationOffsetTime = 100
+
+
+        /* ToDo: Pass diese Funktion so an, dass die Preise, die nicht
+         geklickt wurden, nach einander mit jeweils kurzer Verzögerung 
+         die "Fall"-Animation ausführen */
+
+        function buyButtonClicked(clickedPriceContainer, priceContainers){
+            for(var i=0;i<priceContainers.length;i++){
+                if(priceContainers[i]!== clickedPriceContainer){
+                           removeRest.addDropAnimation(priceContainers[i])
+                       }
+                   }
+
+            }
+
+             
+           
+        
+                
+          
+
+            
+
+            
+
+            // Bonus: Ternary operator für Drehrichtung je nach gerades oder ungerades Element
+
+        
+
+
+        var removeRest = {
+
+            containers: [],
+
+            setup: function(selector, callback){
+
+                this.buttons = document.querySelectorAll(selector)
+
+                this.callback = callback
+
+                this.runCallback = this.runCallback.bind(this)
+
+                this.buttons.length && this.addListeners()
+
+            },
+
+            addListeners: function(){
+
+                for(var i=0; i<this.buttons.length; i++){
+
+                    var button = this.buttons[i]
+
+                    button.addEventListener("click", this.runCallback)
+
+                    this.containers.push(this.getContainer(button))
+
+                }
+
+            },
+
+            getContainer: function(button){
+
+                return button.closest(priceContainerSelector)
+
+            },
+
+            runCallback: function(e){
+
+                this.callback(this.getContainer(e.target), this.containers)
+
+            },
+
+            addDropAnimation: function(container, delay = 0){
+
+                setTimeout(function(){
+
+                    this.animate(container)
+
+                }.bind(this), delay)
+
+            },
+
+            animate: function(container){
+
+                container.classList.add(animationClass)
+
+            }
+
+        }
+
+
+        removeRest.setup(buyButtonSelector, buyButtonClicked)
+
+    </script>
+
+
+
+
+</body>
+
+</html>
